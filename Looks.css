@@ -1,0 +1,566 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+/* CSS for the moon icon */
+#dark-mode-toggle {
+    position: absolute;
+    top: 34px;
+    right: 65px; /* Adjust the left value as needed */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333; /* Remove !important */
+    color: #fff; /* Remove !important */
+}
+
+/* Navigation menu */
+nav {
+    background-color: #333;
+    padding-left: 20px; /* Add left padding to create space */
+    padding-right: 20px; /* Add right padding to create space */
+    /* Add the transition for the sliding animation */
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav-slide-in {
+    transform: translateX(0%);
+}
+
+
+/* Style the header with a background image */
+header {
+    background-image: url('security.jpg'); /* Replace 'HeaderBackground.jpg' with your image file path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(80, 80, 80, 0.6); /* Adjust the background color and opacity as needed */
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
+/* Add a semi-transparent overlay to improve text readability */
+header::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a lower z-index for the overlay so it stays behind the content */
+    animation: fadeInOut 2s ease-in-out forwards; /* Animation for moon icon */
+}
+
+
+/* Style the company name and other text in the header */
+header .container {
+    position: relative;
+    z-index: 1; /* Set a higher z-index to place it in front of the overlay */
+}
+
+/* Style the "About" and "Our Expertise" sections */
+#about,
+#expertise {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* CSS for the heading with typing animation */
+.heading-with-typing {
+    position: relative; /* Make it relative to its container */
+    text-align: center; /* Center the typing animation */
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+#typing-animation {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(240, 0151, 91);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #333; /* Typing cursor effect */
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    display: inline-block; /* Add this line to make it inline with other headings */
+    vertical-align: middle; /* Adjust vertical alignment as needed */
+}
+
+/* Rest of your CSS... */
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #333; /* Typing cursor color */
+    }
+}
+
+
+/* Style the Pricing section */
+#pricing {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Apply dark mode to the Pricing section */
+.dark-mode #pricing {
+    background-color: #333 !important;
+    color:  rgba(240, 0151, 91) !important;
+}
+
+/* Style the Pricing Plaques */
+.pricing-plaques {
+    display: flex;
+    justify-content: space-between; /* Distribute plaques evenly */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.pricing-plaque {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1; /* Equal width for all plaques */
+
+    /* Apply a transition for smoother animation */
+    transition: transform 0.2s;
+}
+
+/* Scale and slightly elevate the plaque on hover */
+.pricing-plaque:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-plaque h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.pricing-plaque p {
+    margin: 10px 0;
+}
+
+.pricing-plaque hr {
+    border: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+.pricing-plaque.basic,
+.pricing-plaque.standard {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Apply dark mode to the Basic and Standard Pricing Plaques */
+.dark-mode .pricing-plaque.basic,
+.dark-mode .pricing-plaque.standard {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+/* Style the Premium Pricing Plaque - Light Mode */
+.pricing-plaque.premium {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Apply dark mode to the Premium Pricing Plaque */
+.dark-mode .pricing-plaque.premium {
+    background-color: rgba(240, 0151, 91) !important;
+    color: #000000 !important;
+}
+
+
+
+/* Apply dark mode to the "About" and "Our Expertise" sections */
+.dark-mode #about,
+.dark-mode #expertise {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+/* Style the title of "Our Expertise" in dark mode */
+.dark-mode #expertise h1 {
+    color: rgba(240, 0151, 91) !important;
+}
+
+
+/* Limit the maximum width and height of the about-image */
+.about-image img {
+    max-width: 100%;
+    max-height: 150px; /* Adjust the max height as needed */
+    height: auto;
+    border-radius: 5px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+/* Style the "Clientele" section */
+#clientele {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
+/* Limit the maximum width of client images */
+.client-image {
+    max-width: 40%;
+    height: auto;
+}
+
+
+/* Apply dark mode to the "Clientele" section */
+.dark-mode #clientele {
+    background-color: #333 !important; /* Add !important to override other styles */
+    color: #fff !important; /* Add !important to override other styles */
+}
+
+/* Style the title of "Clientele" in dark mode */
+.dark-mode #clientele h1 {
+    color: rgba(240, 0151, 91) !important; /* Add !important to override other styles */
+}
+
+/* Contact form styles */
+form input,
+form textarea {
+    display: block;
+    width: 100%; /* Set input and textarea to 100% width */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contact form button styles */
+form button {
+    display: block;
+    width: 50%; /* Set button to 50% width */
+    margin: 0 auto; /* Center the button horizontally */
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Apply hover effect and color change on hover for dark mode */
+Form button:hover {
+    background-color: rgba(240, 151, 91); /* Change the background color on hover in dark mode */
+    color: #333; /* Change the text color on hover in dark mode */
+}
+
+
+.dark-mode #about h1 {
+    color: rgba(240, 151, 91) !important; /* Add !important to override other styles */
+}
+/* Apply dark mode to the "Contact Me" section */
+.dark-mode #contact {
+    background-color: #333 !important; /* Add !important to override other styles */
+    color: #fff !important; /* Add !important to override other styles */
+}
+
+/* Style the title of "Contact Me" in dark mode */
+.dark-mode #contact h1 {
+    color: rgba(240, 151, 91) !important; /* Add !important to override other styles */
+}
+
+/* Style the button in dark mode */
+.dark-mode form button {
+    background-color: #242526 !important; /* Set the desired color */
+    color: rgba(240, 151, 91) !important; /* Text color in dark mode */
+}
+
+/* Style the navigation menu in dark mode */
+.dark-mode nav {
+    background-color: #242526 !important; /* Background color in dark mode */
+}
+
+/* Style the navigation menu text in dark mode */
+.dark-mode nav ul li a {
+    color: rgba(240, 151, 91) !important; /* Text color in dark mode */
+}
+
+/* Make the header image even darker in dark mode */
+.dark-mode header::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.5); /* Increase opacity to make it even darker */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a lower z-index for the overlay so it stays behind the content */
+}
+.dark-mode header h1 {
+    background-color: #3333332e;
+    padding: 10px; /* Add padding to improve readability */
+    color: rgba(240, 151, 91);
+}
+
+/* Center the WhatsApp button within the Contact Us section */
+#contact {
+    text-align: center;
+    background-color: #00000015;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Add some space between the form and the button */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+.dark-mode .whatsapp-button{
+    background-color: rgba(240, 151, 91);
+}
+
+.dark-mode .whatsapp-button:hover {
+    background-color: #259b15;
+}
+
+
+.dark-mode footer{
+    background-color: rgba(240, 151, 91);
+}
+
+/* Update the footer CSS to ensure the background color extends */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    transition: background-color 0.3s, color 0.3s;
+    clear: both; /* Clear floats to contain the footer */
+}
+
+/* Style the copyright text in dark mode */
+.dark-mode footer p {
+    color: #333 !important; /* Change the text color in dark mode */
+}
+
+/* Style the working hours section */
+.working-hours {
+    text-align: center; /* Center-align the working hours section */
+    margin-top: 20px; /* Add space between the content and working hours */
+}
+
+/* Style the map iframe */
+.map iframe {
+    width: 100%; /* Set the map's width to 100% for responsiveness */
+    height: 200px; /* Adjust the map's height as needed */
+}
+
+.separator {
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.working-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align the list items */
+}
+
+.working-hours li {
+    margin-bottom: 5px;
+}
+
+/* Clear the float for the container */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer in dark mode */
+.dark-mode footer {
+    background-color: rgba(240, 151, 91);
+}
+
+/* Style the map iframe in dark mode */
+.dark-mode .map iframe {
+    border: 1px solid #333; /* Change the border color in dark mode */
+}
+
+/* Style the separator in dark mode */
+.dark-mode .separator {
+    border: 1px solid #333; /* Change the border color in dark mode */
+}
+
+/* Style the working hours section in dark mode */
+.dark-mode .working-hours {
+    background-color:  rgba(240, 151, 91); /* Change the background color in dark mode */
+    color: #333; /* Change the text color in dark mode */
+}
+
+
+
+
+/* Initial state for elements with the observe-me class */
+.observe-me {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s ease, transform 3s ease; /* Increased duration to 1 second */
+}
+
+/* Animation when elements come into the viewport */
+.observe-me.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Define a CSS animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to an element */
+.animated-element {
+    animation: fadeIn 4s ease-in-out;
+    opacity: 0; /* Initially, set opacity to 0 */
+}
+
+/* Style for the fake cookies pop-up */
+.cookies-pop-up {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    right: 20px; /* Adjust the distance from the right as needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Background color with transparency */
+    color: #fff; /* Text color */
+    padding: 20px; /* Increase padding for a larger pop-up */
+    border-radius: 10px; /* Increase border radius for a larger pop-up */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Optional shadow effect */
+    z-index: 999; /* Ensure it's on top of other content */
+    max-width: 400px; /* Adjust the maximum width as needed */
+    transition: transform 0.5s ease-in-out;
+}
+
+.cookies-pop-up p {
+    margin: 0;
+    font-size: 16px; /* Increase font size for larger text */
+}
+
+.cookies-pop-up a {
+    color: #ffbf00; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cookies-pop-up button.accept-button {
+    background-color: rgba(240, 151, 91); /* Button background color */
+    color: #000; /* Button text color */
+    border: none;
+    padding: 10px 20px; /* Increase padding for a larger button */
+    border-radius: 5px; /* Increase border radius for a larger button */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cookies-pop-up button.accept-button:hover {
+    background-color: rgba(240, 151, 91); /* Button background color on hover */
+}
+
+
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+}
